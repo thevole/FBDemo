@@ -53,6 +53,17 @@
     }
     
 }
+- (IBAction)forcedLoginToFacebook:(id)sender
+{
+    BBAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    //    [appDelegate closeSession];
+    if (appDelegate.session.isOpen) {
+        NSLog(@"Closing existing");
+        [appDelegate closeSession];
+    }
+    NSLog(@"Forced opening");
+    [appDelegate openSessionCheckCache:NO];
+}
 
 - (IBAction)publishStuff:(id)sender
 {

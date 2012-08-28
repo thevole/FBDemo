@@ -68,9 +68,10 @@
     BBViewController *viewController = (BBViewController *)[self.window rootViewController];
     switch (state) {
         case FBSessionStateOpen:
+            NSLog(@"SessionStateOpen");
             if (!error) {
                 // we have a valid session
-                NSLog(@"User session found.");
+                NSLog(@"SessionStateOpen: User session found.");
                 [viewController.loginButton setTitle:@"Logout from Facebook" forState: UIControlStateNormal];
                 viewController.publishButton.enabled = YES;
                 viewController.likeButton.enabled = YES;
@@ -79,8 +80,9 @@
             break;
             
         case FBSessionStateClosed:
-           
+                       
         case FBSessionStateClosedLoginFailed:
+            NSLog(@"SessionStateClosed or SessionStateClosedLoginFailed");
             [session closeAndClearTokenInformation];
             self.session = nil;
             [self createNewSession];
