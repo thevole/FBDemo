@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FacebookSDK/FacebookSDK.h>
-//#import "Facebook.h"
+//#import <FacebookSDK/FacebookSDK.h>
+#import "Facebook.h"
 
 @interface BBAppDelegate : UIResponder <UIApplicationDelegate>
 
