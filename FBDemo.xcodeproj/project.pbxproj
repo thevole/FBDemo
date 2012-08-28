@@ -15,6 +15,10 @@
 		5B04706715C6BA59006406FC /* BBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B04706615C6BA59006406FC /* BBAppDelegate.m */; };
 		5B04706A15C6BA59006406FC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B04706815C6BA59006406FC /* MainStoryboard.storyboard */; };
 		5B04706D15C6BA59006406FC /* BBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B04706C15C6BA59006406FC /* BBViewController.m */; };
+		5B04707415C6BADC006406FC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B04707315C6BADC006406FC /* FacebookSDK.framework */; };
+		5B04707615C6BB0E006406FC /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B04707515C6BB0E006406FC /* FacebookSDKResources.bundle */; };
+		5B04707815C6D5EB006406FC /* ipadicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B04707715C6D5EB006406FC /* ipadicon.png */; };
+		5B04707A15C6D65A006406FC /* ipadicon-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B04707915C6D65A006406FC /* ipadicon-hd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		5B04706915C6BA59006406FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5B04706B15C6BA59006406FC /* BBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBViewController.h; sourceTree = "<group>"; };
 		5B04706C15C6BA59006406FC /* BBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBViewController.m; sourceTree = "<group>"; };
+		5B04707315C6BADC006406FC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		5B04707515C6BB0E006406FC /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		5B04707715C6D5EB006406FC /* ipadicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipadicon.png; sourceTree = "<group>"; };
+		5B04707915C6D65A006406FC /* ipadicon-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipadicon-hd.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 				5B04705715C6BA59006406FC /* UIKit.framework in Frameworks */,
 				5B04705915C6BA59006406FC /* Foundation.framework in Frameworks */,
 				5B04705B15C6BA59006406FC /* CoreGraphics.framework in Frameworks */,
+				5B04707415C6BADC006406FC /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,8 @@
 		5B04704715C6BA59006406FC = {
 			isa = PBXGroup;
 			children = (
+				5B04707915C6D65A006406FC /* ipadicon-hd.png */,
+				5B04707715C6D5EB006406FC /* ipadicon.png */,
 				5B04705C15C6BA59006406FC /* FBDemo */,
 				5B04705515C6BA59006406FC /* Frameworks */,
 				5B04705315C6BA59006406FC /* Products */,
@@ -67,6 +78,8 @@
 		5B04705515C6BA59006406FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B04707515C6BB0E006406FC /* FacebookSDKResources.bundle */,
+				5B04707315C6BADC006406FC /* FacebookSDK.framework */,
 				5B04705615C6BA59006406FC /* UIKit.framework */,
 				5B04705815C6BA59006406FC /* Foundation.framework */,
 				5B04705A15C6BA59006406FC /* CoreGraphics.framework */,
@@ -152,6 +165,9 @@
 			files = (
 				5B04706115C6BA59006406FC /* InfoPlist.strings in Resources */,
 				5B04706A15C6BA59006406FC /* MainStoryboard.storyboard in Resources */,
+				5B04707615C6BB0E006406FC /* FacebookSDKResources.bundle in Resources */,
+				5B04707815C6D5EB006406FC /* ipadicon.png in Resources */,
+				5B04707A15C6D65A006406FC /* ipadicon-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,9 +260,14 @@
 		5B04707115C6BA59006406FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBDemo/FBDemo-Prefix.pch";
 				INFOPLIST_FILE = "FBDemo/FBDemo-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -255,9 +276,14 @@
 		5B04707215C6BA59006406FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBDemo/FBDemo-Prefix.pch";
 				INFOPLIST_FILE = "FBDemo/FBDemo-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -282,6 +308,7 @@
 				5B04707215C6BA59006406FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+//#import "Facebook.h"
 
 @interface BBAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) FBSession *session;
 
+- (void)openSessionCheckCache:(BOOL)check;
+- (void)closeSession;
+- (void)publishStatus:(NSString *)message;
 @end

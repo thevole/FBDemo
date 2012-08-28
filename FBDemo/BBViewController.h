@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BBViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *publishButton;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @end
